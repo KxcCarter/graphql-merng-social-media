@@ -37,7 +37,10 @@ const LikeButton = ({ user, post: { id, likes, likeCount } }) => {
   );
 
   return (
-    <CustomPopup content="Like post" position="bottom center">
+    <CustomPopup
+      content={liked ? 'Unlike post' : ' Like post'}
+      position="bottom center"
+    >
       <Button as="div" labelPosition="right" onClick={likePost}>
         {likeButton}
         <Label as="a" basic color="teal" pointing="left">
