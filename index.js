@@ -23,7 +23,7 @@ mongoose
     return server.listen({ port: PORT });
   })
   .then((res) => {
-    console.log(`Server running at ${res.url}! Yaaaaaay!`);
+    console.log(`Server running at ${res.url}`);
   })
   .catch((err) => {
     console.error(err);

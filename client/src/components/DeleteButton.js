@@ -32,6 +32,8 @@ const DeleteButton = ({ postId, commentId, callback }) => {
     },
   });
 
+  const message = 'Are you sure you want to delete this ';
+
   return (
     <>
       <Popup
@@ -51,8 +53,8 @@ const DeleteButton = ({ postId, commentId, callback }) => {
         }
       />
       <Confirm
-        header="Whoooooa there, partner! You're fixin' to do something that can't be undone!"
-        content="Are you sure - I mean, are you absolutely POSITIVE - you want to delete this post?"
+        header="Warning!"
+        content={message.concat(commentId ? 'comment?' : 'post?')}
         open={confirmOpen}
         onCancel={() => setConfirmOpen(false)}
         onConfirm={deletePostOrMutation}
