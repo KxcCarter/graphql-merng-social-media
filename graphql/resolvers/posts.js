@@ -28,8 +28,8 @@ module.exports = {
   Mutation: {
     async createPost(_, { body }, context) {
       const user = checkAuth(context);
-      if (args.body.trim() === '') {
-        throw new Error('Post body must bot be empty.');
+      if (body.trim() === '') {
+        throw new Error('Post body must not be empty.');
       }
 
       const newPost = new Post({
@@ -62,7 +62,7 @@ module.exports = {
       }
     },
 
-    async likePostToggle(_, { postId }, context) {
+    async likePost(_, { postId }, context) {
       const { username } = checkAuth(context);
 
       const post = await Post.findById(postId);
